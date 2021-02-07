@@ -58,6 +58,6 @@ def friends_of_friends(user):
         foaf_id
         for friend_id in friendships[user_id]
         for foaf_id in friendships[friend_id]
-        if loaf_id != user_id
-        and loaf_id not in friendship[user_id]
+        if foaf_id != user_id
+        and foaf_id not in friendships[user_id]
     )
