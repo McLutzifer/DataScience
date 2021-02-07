@@ -20,4 +20,11 @@ for i, j in friendship_pairs:
     friendships[i].append(j)  # Add j as a friend of user i
     friendships[j].append(i)  # Add i as a friend of user j
 
-    
+
+def number of friends(user):
+    """How many friends does _user_ have?"""
+    user_id = user["id"]
+    friend_ids = friendships[user_id]
+    return len(friend_ids)
+
+total_connections = sum(number_of_friends(user) for user in users)
