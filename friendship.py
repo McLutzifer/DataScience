@@ -35,3 +35,6 @@ avg_connections = total_connections / num_users
 num_friends_by_id = [(user["id"], number_of_friends(user))
                     for user in users]
 
+num_friends_by_id(
+    key=lambda id_and_friends: id_and_friends[1],
+    reverse=True)
