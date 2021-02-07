@@ -40,3 +40,15 @@ num_friends_by_id = [(user["id"], number_of_friends(user))
 num_friends_by_id(
     key=lambda id_and_friends: id_and_friends[1],
     reverse=True)
+
+
+
+def friends_of_friends(user):
+    user_id = user["id"]
+    return Counter(
+        foaf_id
+        for friend_id in friendships[user_id]
+        for foaf_id in friendships[friend_id]
+        if loaf_id != user_id
+        and loaf_id not in friendship[user_id]
+    )
