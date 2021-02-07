@@ -16,4 +16,8 @@ friendship_pairs = [(0, 1), (0, 2), (1, 2), (1, 3), (2, 3), (3, 4),
 
 friendships = {user["id"]: [] for user in user}
 
-print(friendships)
+for i, j in friendship_pairs:
+    friendships[i].append(j)  # Add j as a friend of user i
+    friendships[j].append(i)  # Add i as a friend of user j
+
+    
