@@ -41,6 +41,15 @@ num_friends_by_id(
     key=lambda id_and_friends: id_and_friends[1],
     reverse=True)
 
+def foaf_ids_bad(user):
+    """foaf is short for "friend of a friend" """
+    return [foaf_id
+        for friend_id in friendships[user["id"]]
+        for foaf_id in friendships[friend_id]]
+
+print(friendships[0])
+print(friendships[1])
+print(friendships[2])
 
 
 def friends_of_friends(user):
